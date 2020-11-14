@@ -24,7 +24,7 @@
     "standard": "^10.0.3"
   },
   "engines": {
-    "node": ">= 8.9.3",
+    "node": "12.x",
     "npm": ">= 4.0.0"
   },
   "standard": {
