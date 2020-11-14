@@ -141,7 +141,7 @@ module.exports = ({ app: robot }) => {
     )
 
     const isOpendForMaster = (
-      ['open', 'reopened'].includes(action) &&
+      ['opened', 'reopened'].includes(action) &&
       ref === RELEASE_BRANCH
     )
 
@@ -177,13 +177,6 @@ module.exports = ({ app: robot }) => {
 
     /** The pull request number */
     const number = _.get(context, 'payload.number')
-    const getPullRequestCommits = context.github.pulls.listCommits({
-      owner,
-      repo,
-      pull_number: number,
-      // A custom page size up to 100. Default is 30.
-      per_page: 100
-    })
 
     // 利用 RxJS 的 expand 處理遞迴的特性，一次拿取 GitHub 分頁 API 的所有 commits
     // @see {@link https://tech.hahow.in/adfd29de1967 | 如何使用 RxJS 處理分頁 API}
