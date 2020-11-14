@@ -7,19 +7,20 @@
   "repository": "https://github.com/hahow/probot-conventional-release.git",
   "scripts": {
     "start": "probot run ./index.js",
-    "test": "jest && standard"
+    "test": "jest && standard",
+    "test-webhook": "probot receive -e pull_request -p tests/payload.json ./index.js"
   },
   "dependencies": {
     "conventional-commits-parser": "^2.0.1",
     "handlebars": "^4.0.11",
     "lodash": "^4.17.4",
-    "probot": "^3.0.0",
-    "rx": "^4.1.0",
+    "probot": "^10.14.0",
     "semver": "^5.4.1"
   },
   "devDependencies": {
     "jest": "^21.2.1",
     "localtunnel": "^1.8.2",
+    "smee-client": "^1.2.2",
     "standard": "^10.0.3"
   },
   "engines": {
